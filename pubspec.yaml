@@ -1,14 +1,13 @@
 name: skyward_ui_kit
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+description: A collection of common Skyward UI elements
+version: 0.1.0
+repository: https://github.com/liquidise/skyward_ui_kit
 
 environment:
   sdk: '>=2.19.2 <3.0.0'
 
-# dependencies:
-#   path: ^1.8.0
+dependencies:
+  path: ^1.8.0
 
 dev_dependencies:
-  lints: ^2.0.0
   test: ^1.21.0
