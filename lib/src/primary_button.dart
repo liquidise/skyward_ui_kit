@@ -11,7 +11,7 @@ class PrimaryButton extends StatelessWidget {
     required this.buttonText,
     required this.onPressed,
     this.buttonIcon,
-		this.gradient = LinearGradient(
+		this.gradient = const LinearGradient(
       colors: [
         Color(0xffF08B60),
         Color(0xffEF8764),
