@@ -19,7 +19,7 @@ class PrimaryButton extends StatelessWidget {
       ],
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
-    )
+    ),
     super.key,
   });
 
