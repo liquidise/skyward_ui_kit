@@ -6,8 +6,6 @@ repository: https://github.com/liquidise/skyward_ui_kit
 environment:
   sdk: '>=2.19.2 <3.0.0'
 
-dependencies:
-  path: ^1.8.0
+# dependencies:
 
-dev_dependencies:
-  test: ^1.21.0
+# dev_dependencies:
