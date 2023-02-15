@@ -1,3 +1,3 @@
 library skyward_ui_kit;
 
-export 'src/primary_button.dart' show PrimaryButton;
+export 'src/components/primary_button.dart';
