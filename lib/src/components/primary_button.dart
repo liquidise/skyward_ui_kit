@@ -30,13 +30,13 @@ class PrimaryButton extends StatelessWidget {
     Gradient? buttonGradient = this.gradient;
     if( this.disabled && this.gradient is LinearGradient ) {
       buttonGradient = LinearGradient(
-        colors: this.gradient.colors.map((color) {
+        colors: this.gradient!.colors.map((color) {
           final grayscaleValue = Color.alphaBlend(color, Colors.white);
           return grayscaleValue;
         }).toList(),
-        begin: this.gradient.begin,
-        end: this.gradient.end,
-        tileMode: this.gradient.tileMode,
+        begin: this.gradient!.begin,
+        end: this.gradient!.end,
+        tileMode: this.gradient!.tileMode,
       );
     }
 
