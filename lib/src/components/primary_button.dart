@@ -28,7 +28,7 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Gradient? buttonGradient = this.gradient;
-    if( this.disabled && buttonGradient is LinearGradient ) {
+    if( this.disabled && this.gradient is LinearGradient ) {
       buttonGradient = LinearGradient(
         colors: this.gradient.colors.map((color) {
           final grayscaleValue = Color.alphaBlend(color, Colors.white);
