@@ -27,13 +27,26 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Gradient? buttonGradient = this.gradient;
+    if( this.disabled && buttonGradient is LinearGradient ) {
+      buttonGradient = LinearGradient(
+        colors: this.gradient.colors.map((color) {
+          final grayscaleValue = Color.alphaBlend(color, Colors.white);
+          return grayscaleValue;
+        }).toList(),
+        begin: this.gradient.begin,
+        end: this.gradient.end,
+        tileMode: this.gradient.tileMode,
+      );
+    }
+
     return InkWell(
       splashColor: const Color(0xff6A0136).withOpacity(0.9),
       child: ConstrainedBox(
         constraints: const BoxConstraints(minWidth: 160),
         child: Container(
           decoration: BoxDecoration(
-            gradient: this.gradient,
+            gradient: buttonGradient,
             borderRadius: BorderRadius.circular(8.0),
           ),
           padding: const EdgeInsets.all(15.0),
@@ -63,9 +76,12 @@ class PrimaryButton extends StatelessWidget {
         ),
       ),
       onTap: () {
+        if( this.disabled ) {
+          return;
+        }
+
         HapticFeedback.selectionClick();
-        print("hello");
-        onPressed();
+        this.onPressed();
       },
     );
   }
