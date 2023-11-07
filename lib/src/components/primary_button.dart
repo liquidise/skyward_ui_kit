@@ -5,7 +5,7 @@ class PrimaryButton extends StatelessWidget {
   final String buttonText;
   Image? buttonIcon;
   final Function onPressed;
-  final Gradient? gradient;
+  final LinearGradient? gradient;
   final bool disabled;
 
   PrimaryButton( {
