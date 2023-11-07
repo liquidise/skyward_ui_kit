@@ -30,7 +30,7 @@ class PrimaryButton extends StatelessWidget {
     final int grey = (
       0.2126 * color.red +
       0.7152 * color.green +
-      0.0722 * color.blue;
+      0.0722 * color.blue
     ).round();
 
     return Color.fromRGBO( grey, grey, grey, color.opacity );
