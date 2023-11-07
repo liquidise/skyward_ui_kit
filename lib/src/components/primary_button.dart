@@ -25,15 +25,28 @@ class PrimaryButton extends StatelessWidget {
     super.key,
   });
 
+  Color toGrey( Color originalColor ) {
+    // Formula to convert a color to grayscale (luma): 0.2126 * R + 0.7152 * G + 0.0722 * B
+    final double grayscaleValue =
+      0.2126 * originalColor.red +
+      0.7152 * originalColor.green +
+      0.0722 * originalColor.blue;
+
+    // Return the grayscale color
+    return Color.fromRGBO(
+      grayscaleValue.toInt(),
+      grayscaleValue.toInt(),
+      grayscaleValue.toInt(),
+      originalColor.opacity
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Gradient? buttonGradient = this.gradient;
     if( this.disabled && this.gradient is LinearGradient ) {
       buttonGradient = LinearGradient(
-        colors: this.gradient!.colors.map((color) {
-          final grayscaleValue = Color.alphaBlend(color, Colors.white);
-          return grayscaleValue;
-        }).toList(),
+        colors: this.gradient!.colors.map( (color) => toGrey(color) ).toList(),
         begin: this.gradient!.begin,
         end: this.gradient!.end,
         tileMode: this.gradient!.tileMode,
