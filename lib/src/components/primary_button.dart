@@ -5,13 +5,15 @@ class PrimaryButton extends StatelessWidget {
   final String buttonText;
   Image? buttonIcon;
   final Function onPressed;
-	final Gradient? gradient;
+  final Gradient? gradient;
+  final bool disabled;
 
   PrimaryButton( {
     required this.buttonText,
     required this.onPressed,
+    this.disabled = false,
     this.buttonIcon,
-		this.gradient = const LinearGradient(
+    this.gradient = const LinearGradient(
       colors: [
         Color(0xffF08B60),
         Color(0xffEF8764),
