@@ -25,20 +25,15 @@ class PrimaryButton extends StatelessWidget {
     super.key,
   });
 
-  Color toGrey( Color originalColor ) {
-    // Formula to convert a color to grayscale (luma): 0.2126 * R + 0.7152 * G + 0.0722 * B
-    final double grayscaleValue =
-      0.2126 * originalColor.red +
-      0.7152 * originalColor.green +
-      0.0722 * originalColor.blue;
+  Color toGrey( Color color ) {
+    // Formula to convert a color to grayscale maintaining luminosity
+    final int grey = (
+      0.2126 * color.red +
+      0.7152 * color.green +
+      0.0722 * color.blue;
+    ).round();
 
-    // Return the grayscale color
-    return Color.fromRGBO(
-      grayscaleValue.toInt(),
-      grayscaleValue.toInt(),
-      grayscaleValue.toInt(),
-      originalColor.opacity
-    );
+    return Color.fromRGBO( grey, grey, grey, color.opacity );
   }
 
   @override
